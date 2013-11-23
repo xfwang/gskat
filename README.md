@@ -1,7 +1,2 @@
-# gskat
+# The "gskat" Package
 
-hahah asdfasdfasfd
-asdfadsfa
-
-as
-dfasdfadsf
