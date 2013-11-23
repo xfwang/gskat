@@ -1,0 +1,5 @@
+load("/Users/peter/Dropbox/Textmate_workspace/gskat/data/gdata.rda")
+ls()
+gdata
+dim(gdata$Z)
+q()

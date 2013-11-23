@@ -1,0 +1,8 @@
+importFrom("CompQuadForm", davies)
+importFrom("e1071", kurtosis)
+importFrom("Matrix", bdiag)
+importFrom("geepack")
+importFrom("gee")
+#importFrom("kinship", kinship)
+
+exportPattern("^[^\\.]")
