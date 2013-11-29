@@ -163,6 +163,7 @@ gskat_seq_cont<-function(y,XC,Z,ID,impute.method="fixed",SNP.weights=NULL,w_a=1,
 		Ts_boot<-apply(Ub.boot,1,function (x) {t(x)%*%W%*%x })
 		
 		mean(Ts_boot)
+		B<-as.matrix(B)
 		var(Ts_boot); var_theory=2*(sum(diag(B%*%t(C)%*%W%*%C%*%B%*%t(C)%*%W%*%C)))
 		df=12/kurtosis(Ts_boot)
 		if (df<0) {df=100}
