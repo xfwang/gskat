@@ -16,7 +16,7 @@ fit_FSKAT_IC_cont<-function(y,XC,FID){
 	#if (class(FID)=="factor"){FID=as.character(FID)}
 	#n<-length(unique(FID)) # family number
 	#R1<-matrix(0.5,ncol=4,nrow=4); diag(R1)=1; R1[1,2]=R1[2,1]=0 # 2*Kinship matrix
-	#R1<-diag(4)
+	#R1<-diag(4
 	
 	diff1<-10
 	i<-0
@@ -168,6 +168,7 @@ gskat_seq_cont<-function(y,XC,Z,ID,impute.method="fixed",SNP.weights=NULL,w_a=1,
 		df=12/kurtosis(Ts_boot)
 		if (df<0) {df=100}
 		
+
 		mu_Ts<- sum(diag(B%*%t(C)%*%W%*%C)) #trace(BC)  # Bsqrt=mysqrt(B); BC<-Bsqrt%*%t(C)%*%C%*%Bsqrt
 		#mu_Ts
 		if (df<0) {pval=NA} else {
@@ -177,7 +178,10 @@ gskat_seq_cont<-function(y,XC,Z,ID,impute.method="fixed",SNP.weights=NULL,w_a=1,
 		Ts_boot=mu_Ts=var_theory=df=pval=NA
 	}
 	
-	return(c(length(maf),sum(maf>0.05),results$Qq,results$ifault,mean(Ts_boot),mu_Ts, var(Ts_boot), var_theory ,df,pval ))
+	#return(c(length(maf),sum(maf>0.05),results$Qq,results$ifault,mean(Ts_boot),mu_Ts, var(Ts_boot), var_theory ,df,pval ))
+	p1<-results$Qq
+	p2<-pval
+	return(c(p1,p2))
 }
 
 
