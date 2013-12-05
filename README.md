@@ -1,6 +1,6 @@
 # The "gskat" Package
 
-This package implements a family based association test via GEE Kernel Machine (SKAT) score test. It has functions to test an association between SNP sets and binary/continuous phenotypes.
+This package implements a family based association test via GEE Kernel Machine (SKAT) score test. It has functions to test an association between SNP/SNV sets and binary/continuous phenotypes.
 
 
 Installation Instructions
