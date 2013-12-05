@@ -4,6 +4,7 @@ This package implements a family based association test via GEE Kernel Machine (
 
 Installation Instructions
 -------------------------
+Start R and then install the 'gskat' package with the following commands.
 ```
 #install.packages("devtools")
 library(devtools)
