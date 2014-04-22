@@ -11,3 +11,7 @@ Start R and then install the 'gskat' package with the following commands.
 library(devtools)
 install_github("gskat",username="xfwang")
 ```
+
+Contact
+-------------------------
+xuefeng.wang@stonybrook.edu
