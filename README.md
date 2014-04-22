@@ -12,6 +12,6 @@ library(devtools)
 install_github("gskat",username="xfwang")
 ```
 
-Contact
+
 -------------------------
 xuefeng.wang@stonybrook.edu
