@@ -13,7 +13,7 @@ fit_FSKAT_IC<-function(y,XC,FID){
   i<-0
   while (diff1>10e-6)
     {
-    
+   
     i<-i+1
     #Fisher scoring
     mu<- plogis( XC %*% alpha)
