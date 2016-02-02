@@ -77,8 +77,8 @@ Xuefeng Wang
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-	 # attach(gdata)
-     # gskat_seq_opt(y,X[,-1],Z,ID=data.frame(FID=ID$FID,IID=ID$IID))
+       attach(gdata)
+       gskat_seq_opt(y,X[,-1],Z,ID=data.frame(FID=ID$FID,IID=ID$IID))
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
