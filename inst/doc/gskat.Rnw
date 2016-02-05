@@ -121,5 +121,15 @@ tests with common varaints by setting SNP weight on equal SNP to 1.
 # gskat_seq_cont(y,XC=X,Z,ID, w_a=1,w_b=1) #common variants with no/equal weights
 @
 
+\section{GSKAT optimal test}
+gskat package provides a function (gskat\_seq\_opt) for family-based sequencing data, which uses perturbation procedures 
+to calculate the p-value. 
+
+<<sequence2>>=
+# attach(gdata) 
+# gskat_seq_opt(y,X[,-1],Z,ID=data.frame(FID=ID$FID,IID=ID$IID))
+@
+
+
 
 \end{document}
