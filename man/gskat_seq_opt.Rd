@@ -78,7 +78,7 @@ Xuefeng Wang
 }
 \examples{
        attach(gdata)
-       gskat_seq_opt(y,X[,-1],Z,ID=data.frame(FID=ID$FID,IID=ID$IID))
+       gskat_seq_opt(y,X[,-1],Z,ID=data.frame(FID=ID$FID,IID=ID$IID),NB=10000)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
