@@ -31,7 +31,7 @@ fit_FSKAT_IC<-function(y,XC,FID){
   return(list(alpha,i))
 }
 
-gskat_seq_opt2<-function(y,Z,ID,NB,impute.method="fixed",SNP.weights=NULL,w_a=1,w_b=25,resampling=TRUE,pw="Rade",Uc=TRUE,sW=FALSE,np=10000) 
+gskat_seq_opt2<-function(y,Z,ID,NB=10000,impute.method="fixed",SNP.weights=NULL,w_a=1,w_b=25,resampling=TRUE,pw="Rade",Uc=TRUE,sW=FALSE,np=10000) 
 {
   maf<-apply(Z,2,function(x){sum(x,na.rm=T)/((length(x)-sum(is.na(x)))*2)} )#cacluate before center
   if(impute.method=="fixed") Z<-apply(Z,2,function(x){x[is.na(x)]=mean(x,na.rm=TRUE);return(x)}) #mean values imputation
