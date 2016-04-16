@@ -13,7 +13,7 @@ fit_FSKAT_IC<-function(y,XC,FID){
   i<-0
   while (diff1>10e-6)
     {
-   
+    
     i<-i+1
     #Fisher scoring
     mu<- plogis( XC %*% alpha)
@@ -31,7 +31,7 @@ fit_FSKAT_IC<-function(y,XC,FID){
   return(list(alpha,i))
 }
 
-gskat_seq_opt<-function(y,XC,Z,ID,NB=10000,impute.method="fixed",SNP.weights=NULL,w_a=1,w_b=25,resampling=TRUE,pw="Rade",Uc=TRUE,sW=FALSE,np=10000)
+gskat_seq_opt<-function(y,XC,Z,ID,NB,impute.method="fixed",SNP.weights=NULL,w_a=1,w_b=25,resampling=TRUE,pw="Rade",Uc=TRUE,sW=FALSE,np=10000) 
 {
   maf<-apply(Z,2,function(x){sum(x,na.rm=T)/((length(x)-sum(is.na(x)))*2)} )#cacluate before center
   if(impute.method=="fixed") Z<-apply(Z,2,function(x){x[is.na(x)]=mean(x,na.rm=TRUE);return(x)}) #mean values imputation
@@ -84,7 +84,7 @@ gskat_seq_opt<-function(y,XC,Z,ID,NB=10000,impute.method="fixed",SNP.weights=NUL
   #TS<-t(U)%*%((1-rho)*W+rho*tcrossprod(sqrt(W)%*%onev))%*%U    #new ts under rho
   for(i in 1:11)
   {TS[i]=t(U)%*%((1-rho[i])*W+rho[i]*tcrossprod(sqrt(W)%*%onev))%*%U}
-  Bsqrt=mysqrt(B)
+  Bsqrt=denman.beavers(B)$sqrt
   BC<-Bsqrt%*%t(C)%*%((1-rho[i])*W+rho[i]*tcrossprod(sqrt(W)%*%onev))%*%C%*%Bsqrt  #to get new eigenvalues
   Lamda<-eigen(BC,only.values=T)$values
   results<-davies(TS,Lamda,rep(1, length(Lamda)))
@@ -179,11 +179,27 @@ blockMatrixDiagonal<-function(...){
 
 
 #square root of a matrix
-mysqrt<-function (V) {
-  #V=B
-  V.eig<-eigen(V)
-  V.eigvalues<-V.eig$values
-  V.eigvalues[-1e-8<V.eigvalues & V.eigvalues<0]=0
-  V.sqrt=V.eig$vectors %*% diag(sqrt(V.eigvalues)) %*% solve(V.eig$vectors)
-  return(V.sqrt)
+#mysqrt<-function (V) {
+#  #V=B
+#  V.eig<-eigen(V)
+#  V.eigvalues<-V.eig$values
+#  V.eigvalues[-1e-8<V.eigvalues & V.eigvalues<0]=0
+#  V.sqrt=V.eig$vectors %*% diag(sqrt(V.eigvalues)) %*% solve(V.eig$vectors)
+#  return(V.sqrt)
+# }
+
+#square root of a matrix
+#from http://realizationsinbiostatistics.blogspot.com/2008/08/matrix-square-roots-in-r_18.html
+denman.beavers <- function(mat,maxit=50) {
+  stopifnot(nrow(mat) == ncol(mat))
+  niter <- 0
+  y <- mat
+  z <- diag(rep(1,nrow(mat)))
+  for (niter in 1:maxit) {
+    y.temp <- 0.5*(y+solve(z))
+    z <- 0.5*(z+solve(y))
+    y <- y.temp
+  }
+  return(list(sqrt=y,sqrt.inv=z))
 }
+
