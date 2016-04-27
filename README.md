@@ -21,12 +21,15 @@ xuefeng.wang@stonybrook.edu
 
 
 -------------------------
-Q and A:
-Does gskat have function for testing without any covariates?
+Q&A:
+Gskat now have function for testing without any covariates.
 A new function called gskat_seq_opt2 has just been added for testing without covaraites. 
 
 Does gskat provides a function to do null model fitting to speed up the large scale test?
 We are working on this in the new package.
+
+-------------------------
+Updates:
 
 
 
