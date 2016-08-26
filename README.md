@@ -6,7 +6,7 @@ References:
 -------------------------
 Wang X. et al. GEE-Based SNP Set Association Test for Continuous and Discrete Traits in Family-Based Association Studies. Genetic Epidemiology (2013) 37: 778-786
 
-Wang X. et al. Rare variant association test in family based sequencing studies. Breifings in Bioinformatics (In press).
+Wang X. et al. Rare variant association test in family based sequencing studies. Breifings in Bioinformatics (2016+, To appear online soon).
 
 
 Installation Instructions
