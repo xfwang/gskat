@@ -2,6 +2,11 @@
 
 This package implements a family based association test via GEE Kernel Machine (SKAT) score test. It has functions to test an association between SNP/SNV sets and binary/continuous phenotypes.
 
+References: 
+-------------------------
+Wang X. et al. GEE-Based SNP Set Association Test for Continuous and Discrete Traits in Family-Based Association Studies. Genetic Epidemiology (2013) 37: 778-786
+Wang X. et al. Rare variant association test in family based sequencing studies. Breifings in Bioinformatics (In press).
+
 
 Installation Instructions
 -------------------------
